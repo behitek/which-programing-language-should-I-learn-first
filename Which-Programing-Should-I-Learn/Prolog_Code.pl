@@ -13,7 +13,7 @@ language('python', why('im_interested'), prefer_to_learn('easy_way')).
 language('python', why('im_interested'), prefer_to_learn('best_way')).
 language('python', why('improve_myself'), prefer_to_learn('easy_way')).
 language('python', why('improve_myself'), prefer_to_learn('best_way')).
-language('java', why('make_money'), which_platform('doesn_t_matter')).
+language('java', why('make_money'), which_platform('doesnt_matter')).
 language('java', why('make_money'), which_platform('web'), web('back_end'), want_to_work_for('corporate'), think_about_microsoft('not_bad')).
 language('java', why('make_money'), which_platform('web'), web('back_end'), want_to_work_for('corporate'), think_about_microsoft('suck')).
 language('java', why('make_money'), which_platform('mobile'), which_mobile_os('android')).

@@ -42,7 +42,7 @@ namespace Which_Programing_Should_I_Learn
                 "Just for fun", "I'm interested", "Improve myself"}));
             // 1
             questionList.Add(new MyQuestion("Which platform/field?", 
-                new List<string>() { "Doesn't matter", "Gamming", "Mobile", "Facebook",
+                new List<string>() { "Doesn't matter", "Gaming", "Mobile", "Facebook",
                 "Google", "Microsoft", "Apple", "Web", "Enterprise"}));
             // 2
             questionList.Add(new MyQuestion("Which OS?", new List<string>() { "IOS", "Android" }));
@@ -190,7 +190,13 @@ namespace Which_Programing_Should_I_Learn
                 }
                 query = query.Substring(0, query.Length - 2);
                 query = "language(X, " + query + ").";
-                MessageBox.Show(description[prolog.GetResult(query).ToUpper()], "Hey!!!",  MessageBoxButtons.OK, MessageBoxIcon.Information);
+                try
+                {
+                    MessageBox.Show(description[prolog.GetResult(query).ToUpper()], "Hey!!!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }catch(Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
                 reset();
             }
         }

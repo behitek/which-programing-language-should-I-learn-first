@@ -203,7 +203,7 @@
             // 
             this.rd3.AutoSize = true;
             this.rd3.BackColor = System.Drawing.Color.Transparent;
-            this.rd3.Location = new System.Drawing.Point(77, 154);
+            this.rd3.Location = new System.Drawing.Point(91, 154);
             this.rd3.Name = "rd3";
             this.rd3.Size = new System.Drawing.Size(85, 17);
             this.rd3.TabIndex = 4;
@@ -229,7 +229,7 @@
             // 
             this.rd2.AutoSize = true;
             this.rd2.BackColor = System.Drawing.Color.Transparent;
-            this.rd2.Location = new System.Drawing.Point(77, 101);
+            this.rd2.Location = new System.Drawing.Point(91, 101);
             this.rd2.Name = "rd2";
             this.rd2.Size = new System.Drawing.Size(85, 17);
             this.rd2.TabIndex = 3;
@@ -242,7 +242,7 @@
             // 
             this.rd1.AutoSize = true;
             this.rd1.BackColor = System.Drawing.Color.Transparent;
-            this.rd1.Location = new System.Drawing.Point(77, 45);
+            this.rd1.Location = new System.Drawing.Point(91, 45);
             this.rd1.Name = "rd1";
             this.rd1.Size = new System.Drawing.Size(85, 17);
             this.rd1.TabIndex = 2;
@@ -284,9 +284,10 @@
             this.btnReset.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnReset.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btnReset.Image = ((System.Drawing.Image)(resources.GetObject("btnReset.Image")));
-            this.btnReset.Location = new System.Drawing.Point(115, 210);
+            this.btnReset.ImageFixedSize = new System.Drawing.Size(24, 24);
+            this.btnReset.Location = new System.Drawing.Point(123, 210);
             this.btnReset.Name = "btnReset";
-            this.btnReset.Size = new System.Drawing.Size(92, 35);
+            this.btnReset.Size = new System.Drawing.Size(84, 35);
             this.btnReset.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btnReset.TabIndex = 1;
             this.btnReset.Text = "&Restart";
