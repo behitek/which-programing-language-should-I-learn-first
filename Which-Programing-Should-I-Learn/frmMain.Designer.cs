@@ -256,6 +256,7 @@
             this.btnNext.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnNext.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btnNext.Image = ((System.Drawing.Image)(resources.GetObject("btnNext.Image")));
+            this.btnNext.ImagePosition = DevComponents.DotNetBar.eImagePosition.Right;
             this.btnNext.ImageTextSpacing = 5;
             this.btnNext.Location = new System.Drawing.Point(506, 210);
             this.btnNext.Name = "btnNext";

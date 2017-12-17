@@ -66,15 +66,15 @@ namespace Which_Programing_Should_I_Learn
             questionList.Add(new MyQuestion("Auto or Manual car?", 
                 new List<string>() { "Auto", "Manual" }));
 
-            description.Add("PYTHON", "PYTHON is the right for you! \nWidely regarded as the best programming language for beginners\nEasiest to learn");
-            description.Add("JAVA", "JAVA is the right for you!\nOne of the most in demand & highest paying programming languages\nSlogan: write once, work everywhere");
-            description.Add("C", "C is the right for you!\nLingua franca of programming language\nOne of the oldest and most widely used language in the world");
-            description.Add("C++", "C++ is the right for you!\nComplex version of C with a lot more features\nRecommended only if you have a mentor to guide you");
-            description.Add("JAVASCRIPT", "JAVASCRIPT is the right for you!\nMost popular clients-side web scripting language\nA must learn for front-end web developer (HTML and CSS as well)");
-            description.Add("C#", "C# is the right for you!\nA popular choice for enterprise to create websites and Windows application using .NET framework\nSimilar to Java in basic syntax and some features");
-            description.Add("RUBY", "RUBY is the right for you!\nMostly known for its popular web framework, Ruby on Rails\nFocuses on getting things done");
-            description.Add("PHP", "PHP is the right for you!\nSuitable for building small and simple sites within a short time frame\nSupported by almost every web hosting services with lower price");
-            description.Add("OBJECTIVE-C", "OBJECTIVE-C is the right for you!\nPrimary language used by Apple for MacOSX & iOS\nChoose this if you want to focus on developing iOS or OSX apps only");
+            description.Add("PYTHON", "PYTHON is the right for you! \r\nWidely regarded as the best programming language for beginners\r\nEasiest to learn");
+            description.Add("JAVA", "JAVA is the right for you!\r\nOne of the most in demand & highest paying programming languages\r\nSlogan: write once, work everywhere");
+            description.Add("C", "C is the right for you!\r\nLingua franca of programming language\r\nOne of the oldest and most widely used language in the world");
+            description.Add("C++", "C++ is the right for you!\r\nComplex version of C with a lot more features\r\nRecommended only if you have a mentor to guide you");
+            description.Add("JAVASCRIPT", "JAVASCRIPT is the right for you!\r\nMost popular clients-side web scripting language\r\nA must learn for front-end web developer (HTML and CSS as well)");
+            description.Add("C#", "C# is the right for you!\r\nA popular choice for enterprise to create websites and Windows application using .NET framework\r\nSimilar to Java in basic syntax and some features");
+            description.Add("RUBY", "RUBY is the right for you!\r\nMostly known for its popular web framework, Ruby on Rails\r\nFocuses on getting things done");
+            description.Add("PHP", "PHP is the right for you!\r\nSuitable for building small and simple sites within a short time frame\r\nSupported by almost every web hosting services with lower price");
+            description.Add("OBJECTIVE-C", "OBJECTIVE-C is the right for you!\r\nPrimary language used by Apple for MacOSX & iOS\r\nChoose this if you want to focus on developing iOS or OSX apps only");
         }
 
         private void BindQuestion(int index)
@@ -183,16 +183,26 @@ namespace Which_Programing_Should_I_Learn
             if(currentQuestion == -1)
             {
                 String query = "";
+                String history = "";
                 while(myAnswers.Count > 0)
                 {
                     MyAnswer ma = myAnswers.Pop();
                     query = key[ma.QuestionIndex] + "('" + ma.Answer + "'), " + query;
+                    history = "---------------------------------------------------\r\n" + history;
+                    history = "[Q] " + ma.Answer + "\r\n" + history;
+                    history = "[A] " + questionList[ma.QuestionIndex].Question + "\r\n" + history;
                 }
                 query = query.Substring(0, query.Length - 2);
                 query = "language(X, " + query + ").";
                 try
                 {
-                    MessageBox.Show(description[prolog.GetResult(query).ToUpper()], "Hey!!!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    String result = description[prolog.GetResult(query).ToUpper()];
+                    MessageBox.Show(result, "Hey!!!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    if(MessageBox.Show("View your question history?", "View History", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        history += "System result:\r\n" + result;
+                        new frmHistory(history).ShowDialog();
+                    }
                 }catch(Exception ex)
                 {
                     MessageBox.Show(ex.Message);
